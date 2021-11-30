@@ -1,0 +1,167 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Add Review
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin-top: 70px">
+    <h2>Book Recommendation System</h2>
+        </div>
+        <center>
+    <form action="homepage" method="post">
+        <div>
+            <label for="book" class="l1">Choose Book</label>
+        </div>
+        <div>
+            <select id="book" name="book">
+                {% for i in range(0,book_names|length) %}
+                <option class="black" value={{i}}>{{book_names[i]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="btn">
+        <input type="submit" value="Recommend" class="btn btn-outline-dark btn-lg width=40px mb-3">
+        </div>
+    </form>
+
+</center>
+
+
+{% if recommend==1 %}
+
+<center>
+    <!--cards-->
+    <!--1st-->
+
+    <center>
+        <h2><a class="h2">YOUR CHOICE</a></h2>
+    </center>
+
+
+    <div class="main">
+        <div class="card0">
+            <div class="title">
+                <h5>{{choice[0]}} </h5>
+            </div>
+
+            <div class="des">
+                <h6>Year:- {{choice[2]}}</h6>
+                <h6>Author :- {{choice[1]}}</h6>
+                <h6>Publisher:- {{choice[3]}}</h6>
+            </div>
+            <div class="des">
+                <a href="https://isbnsearch.org/search?s={{choice[5]}}" type="button"
+                    class="btn btn-outline-info btn-lg width=40px mb-3">Show</a>
+            </div>
+        </div>
+    </div>
+
+
+</center>
+
+
+
+
+<center>
+    <!--cards-->
+    <!--1st-->
+
+    <center>
+        <h2><a class="h2">RECOMMENDED BOOKS</a></h2>
+    </center>
+
+
+    <div class="main">
+        <div class="card1">
+            <div class="title">
+                <h5>{{titles[0]}} </h5>
+            </div>
+
+            <div class="des">
+                <h6>Year:- {{year[0]}}</h6>
+                <h6>Author :- {{author[0]}}</h6>
+                <h6>Publisher:- {{publisher[0]}} </h6>
+            </div>
+            <div class="des">
+                <a href="https://isbnsearch.org/search?s={{isbn_no[0]}}" type="button" class="btn btn-outline-info btn-lg width=40px mb-3">Show</a>
+            </div>
+        </div>
+
+        <!--2nd-->
+        <div class="card2">
+            <div class="title">
+                <h5>{{titles[1]}} </h5>
+            </div>
+
+
+            <div class="des">
+                <h6>Year:- {{year[1]}}</h6>
+                <h6>Author :- {{author[1]}}</h6>
+                <h6>Publisher:- {{publisher[1]}}</h6>
+            </div>
+            <div class="des">
+                <a href="https://isbnsearch.org/search?s={{isbn_no[1]}}" type="button"
+                    class="btn btn-outline-info btn-lg width=40px mb-3">Show</a>
+            </div>
+        </div>
+
+        <!--3rd-->
+        <div class="card3">
+            <div class="title">
+                <h5>{{titles[2]}} </h5>
+            </div>
+
+
+            <div class="des">
+                <h6>Year:- {{year[2]}}</h6>
+                <h6>Author :- {{author[2]}}</h6>
+                <h6>Publisher:- {{publisher[2]}}</h6>
+            </div>
+            <div class="des">
+                <a href="https://isbnsearch.org/search?s={{isbn_no[2]}}" type="button"
+                    class="btn btn-outline-info btn-lg width=40px mb-3">Show</a>
+            </div>
+        </div>
+
+
+        <!--4th-->
+        <div class="card4">
+            <div class="title">
+                <h5>{{titles[3]}} </h5>
+            </div>
+
+            <div class="des">
+                <h6>Year:- {{year[3]}}</h6>
+                <h6>Author :- {{author[3]}}</h6>
+                <h6>Publisher:- {{publisher[3]}}</h6>
+            </div>
+            <div class="des">
+                <a href="https://isbnsearch.org/search?s={{isbn_no[3]}}" type="button"
+                    class="btn btn-outline-info btn-lg width=40px mb-3">Show</a>
+            </div>
+        </div>
+
+        <!--5th-->
+        <div class="card5">
+            <div class="title">
+                <h5>{{titles[4]}} </h5>
+            </div>
+
+            <div class="des">
+                <h6>Year:- {{year[4]}}</h6>
+                <h6>Author :- {{author[4]}}</h6>
+                <h6>Publisher:- {{publisher[4]}}</h6>
+            </div>
+            <div class="des">
+                <a href="https://isbnsearch.org/search?s={{isbn_no[4]}}" type="button"
+                    class="btn btn-outline-info btn-lg width=40px mb-3">Show</a>
+            </div>
+        </div>
+    </div>
+
+
+</center>
+
+{% endif %}
+{% endblock %}

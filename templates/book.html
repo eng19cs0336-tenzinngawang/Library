@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ book.title }}
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin-top: 70px">
+
+    <h1>{{ book.title }} ({{ book.year }})<div style="font-size: 25px;">by {{ book.author }}</div></h1>
+
+    <br>
+
+    {% if link %}
+        <div class="container">
+              <div class="row">
+              <div class="col-sm-4">
+                  <div class="row">
+                      <div class="col-sm-4">
+                          <a href="{{ link }}"><img src="{{ image_url }}" alt="Book Cover"></a>
+                      </div>
+                  </div>
+                </div>
+                  <div class="col-sm-8">
+                    <strong>Description:</strong>
+                    <br>
+                    <br>
+                    <p>{{ description }}</p>
+                </div>
+          </div>
+    {% else %}
+        <h3>No Info on book is Available</h3>
+        </div>
+    {% endif %}
+    </div>
+
+{% endblock %}
