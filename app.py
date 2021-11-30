@@ -6,7 +6,12 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 import requests
 from xml.etree import ElementTree
 
+#app initializatio
 app = Flask(__name__)
+
+app.secret_key = 'key'
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
 
 engine = create_engine('postgres://gmtanwnptdxhbk:4e51670c23af5fb63220fe4b138c0a0dde83390935f29e6ec8e914efbdf8b1db'
                        '@ec2-34-193-46-89.compute-1.amazonaws.com:5432/dcldsd80gdqt3n')
@@ -226,7 +231,6 @@ def recommend():
         return render_template('recommend.html', book_names=book_names, choice=choice, titles=titles, author=authors,
                                year=years, publisher=publishers, recommend=recommend, isbn_no=isbn_no)
     return render_template('recommend.html', book_names=book_names)
-  
-  
+
 if __name__ == '__main__':
-  app.run(debug=True)
+    app.run(debug=True)
