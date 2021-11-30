@@ -6,7 +6,6 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 import requests
 from xml.etree import ElementTree
 
-#app initializatio
 app = Flask(__name__)
 
 app.secret_key = 'key'
@@ -231,6 +230,3 @@ def recommend():
         return render_template('recommend.html', book_names=book_names, choice=choice, titles=titles, author=authors,
                                year=years, publisher=publishers, recommend=recommend, isbn_no=isbn_no)
     return render_template('recommend.html', book_names=book_names)
-
-if __name__ == '__main__':
-    app.run(debug=True)
