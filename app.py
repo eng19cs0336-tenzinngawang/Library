@@ -230,3 +230,6 @@ def recommend():
         return render_template('recommend.html', book_names=book_names, choice=choice, titles=titles, author=authors,
                                year=years, publisher=publishers, recommend=recommend, isbn_no=isbn_no)
     return render_template('recommend.html', book_names=book_names)
+  
+if __name__ == '__main__':
+    app.run(debug=True)
