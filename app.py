@@ -185,8 +185,8 @@ def book_api(isbn):
 
 
 
-@app.route('/recommend', methods=['GET', 'POST'])
-def recommend():
+@app.route('/reco', methods=['GET', 'POST'])
+def reco():
 
     recommend = 0
     loaded_model = pickle.load(open("book_recommender.pkl", "rb"))
@@ -227,9 +227,9 @@ def recommend():
             publishers.append(publish)
             titles.append(name)
             isbn_no.append(isbn)
-        return render_template('recommend.html', book_names=book_names, choice=choice, titles=titles, author=authors,
+        return render_template('reco.html', book_names=book_names, choice=choice, titles=titles, author=authors,
                                year=years, publisher=publishers, recommend=recommend, isbn_no=isbn_no)
-    return render_template('recommend.html', book_names=book_names)
+    return render_template('reco.html', book_names=book_names)
   
 if __name__ == '__main__':
     app.run(debug=True)
