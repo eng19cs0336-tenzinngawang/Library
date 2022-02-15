@@ -111,7 +111,7 @@ def signup():
         return render_template('signup.html', navbar=False)
 
 
-@app.route('/books/<isbn>')
+@app.route('/book/<isbn>')
 def book(isbn):
 
     book = db.execute('SELECT * FROM books WHERE isbn=:isbn',
